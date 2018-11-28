@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+
+
+  </style>
+</head>
+
+<body>
+<header class="masthead">
+<div class="container">
+<div class="intro-text">
+  <!-- <div class="intro-lead-in">Sahaja Yoga - DC Metro Area</div> -->
+
+
+
+
+              <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="form-group">
+        <label for="email">Mail</label>
+        <input required email type="email" id="email" name="email"
+         class="form-control" >
+
+
+
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input  required  type="password"  id="password"  name="password"
+          class="form-control" >
+          
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Sign In</button>
+    </form>
+
+
+
+</div>
+</div>
+
+
+
+  </header>
+
+  </body>
+  </html>
