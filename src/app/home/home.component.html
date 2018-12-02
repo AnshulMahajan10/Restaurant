@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Restaurant</title>
     <!-- Bootstrap Core CSS -->
-    
+
 </head>
 
 <body class="fix-header card-no-border">
@@ -87,10 +87,10 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li><a class="has-arrow" ><i class="mdi mdi-gauge"></i>Dashboard</a></li>
-						<li class="active"><a class="has-arrow" href="categories.html" ><i class="mdi mdi-gauge"></i>Category</a></li>
-						<li><a class="has-arrow" ><i class="mdi mdi-gauge"></i>Sub Category</a></li>
+						<li ><a class="has-arrow"  (click)="selectCategory()"><i class="mdi mdi-gauge"></i>Category</a></li>
+						<li><a class="has-arrow" (click)="selectSubCategory()"><i class="mdi mdi-gauge"></i>Sub Category</a></li>
 						<li><a class="has-arrow" ><i class="mdi mdi-gauge"></i>Industries</a></li>
-						<li><a class="has-arrow" ><i class="mdi mdi-gauge"></i>Nutrition</a></li>
+						<li><a class="has-arrow" (click)="selectNutrition()"><i class="mdi mdi-gauge"></i>Nutrition</a></li>
 					</ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -103,85 +103,35 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Categories</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Categories</li>
-                        </ol>
-                    </div>
-                    <div class="col-md-6 col-4 align-self-center">
-                        <button onclick="addaction()" class="btn pull-right hidden-sm-down btn-success"><i class="mdi mdi-plus-circle"></i> Create</button>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="table-responsive m-t-10">
-                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Title</th>
-                                                <th>Description</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>South Indian</td>
-                                                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
-                                                <td>
-													<button onclick="editaction()" class="btn btn-warning"><i class="mdi mdi-grease-pencil"></i></button>
-													&nbsp;&nbsp;<button onclick="deleteaction()" class="btn btn-danger"><i class="mdi mdi-delete"></i></button>
-												</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-			</div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+        <div *ngIf="seslectedModel=='Category'" class="page-wrapper">
+
+         <app-category>
+         </app-category>
+
             <footer class="footer"> © 2018</footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+
+        <div *ngIf="seslectedModel=='subcategory'" class="page-wrapper">
+
+         <app-subcategory>
+         </app-subcategory>
+
+            <footer class="footer"> © 2018</footer>
+
+        </div>
+
+        <div *ngIf="seslectedModel=='nutrition'" class="page-wrapper">
+
+         <app-nutrition>
+         </app-nutrition>
+
+            <footer class="footer"> © 2018</footer>
+
+        </div>
+
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
+
 	<!-- Edit modal -->
 	<div id="add-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 		<div class="modal-dialog">
@@ -236,6 +186,22 @@
 			</div>
 		</div>
 	</div>
+
+  <div id="delete-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Are you sure?</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-danger waves-effect waves-light">No</button>
+      </div>
+    </div>
+  </div>
+</div>
 	<!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->

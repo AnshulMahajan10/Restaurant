@@ -7,9 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  seslectedModel = 'none';
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
+
+  selectCategory() {
+
+  this.seslectedModel = 'Category';
+}
+
+selectSubCategory() {
+
+    this.seslectedModel = 'subcategory';
+
+  }
+
+  selectNutrition() {
+
+      this.seslectedModel = 'nutrition';
+
+    }
 
 }

@@ -10,12 +10,18 @@ import { LoginComponent } from './login/login.component';
 
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NutritionComponent } from './nutrition/nutrition.component';
+import { CategoryComponent } from './category/category.component';
+import { SubcategoryComponent } from './subcategory/subcategory.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NutritionComponent,
+    CategoryComponent,
+    SubcategoryComponent
   ],
   imports: [
     BrowserModule,
